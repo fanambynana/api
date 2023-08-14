@@ -17,20 +17,13 @@ paths:
       summary: Find all students
       responses:
         '200':
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    birthdate:
-                      type: string
+                  $ref: '#/components/schemas/Student'
               example:
                 - id: 1
                   name: Rakoto
@@ -39,3 +32,35 @@ paths:
           description: Invalid status value
         '404':
           description: Not found
+    post:
+      tags:
+        - default
+      summary: Create a new student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: Invalid request
+        '409':
+          description: Student already exists
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        birthdate:
+          type: string
