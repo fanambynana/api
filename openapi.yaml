@@ -32,9 +32,9 @@ paths:
                     birthdate:
                       type: string
               example:
-                id: 1
-                name: Rakoto
-                birthdate: 2001-10-24
+                - id: 1
+                  name: Rakoto
+                  birthdate: 2001-10-24
         '400':
           description: Invalid status value
         '404':
