@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Onboarding - API
+  description: |-
+    STD 22006
+  version: 1.0.0
+servers:
+  - url: https://std22006.com
+tags:
+  - name: default
+    description: Default operation
+paths:
+  /students:
+    get:
+      tags:
+        - default
+      summary: Find all students
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  birthdate:
+                    type: string
+              example:
+                id: 1
+                name: Rakoto
+                birthdate: 2001-10-24
+        '400':
+          description: Invalid status value
+        '404':
+          description: Not found
