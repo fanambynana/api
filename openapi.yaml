@@ -22,13 +22,15 @@ paths:
             application/json:
               schema:
                 type: array
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: string
-                  birthdate:
-                    type: string
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    birthdate:
+                      type: string
               example:
                 id: 1
                 name: Rakoto
