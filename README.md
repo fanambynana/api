@@ -1,2 +1,2 @@
-Scrypt Yaml
+Script Yaml
 
